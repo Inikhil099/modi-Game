@@ -114,13 +114,16 @@ function play(){
             let pipe_posi = Math.floor(Math.random() * 43) + 8;
             let pipe_sprite_inv = document.createElement('img');
             pipe_sprite_inv.className = 'pipe_sprite';
-            pipe_sprite.src = "./images/rahulenemy.jpg"
+            pipe_sprite_inv.src = "./images/rahulenemy.jpg"
+            pipe_sprite_inv.style.transform = "rotateZ(180deg)"
+
             pipe_sprite_inv.style.top = pipe_posi - 70 + 'vh';
             pipe_sprite_inv.style.left = '100vw';
 
             document.body.appendChild(pipe_sprite_inv);
-            let pipe_sprite = document.createElement('div');
-            pipe_sprite.style.backgroundColor = "red"
+            let pipe_sprite = document.createElement('img');
+            pipe_sprite.src = "./images/rahulenemy.jpg"
+
             pipe_sprite.className = 'pipe_sprite';
             pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
             pipe_sprite.style.left = '100vw';
@@ -128,7 +131,7 @@ function play(){
 
             document.body.appendChild(pipe_sprite);
         }
-        pipe_seperation++;
+        pipe_seperation += 0.8;
         requestAnimationFrame(create_pipe);
     }
     requestAnimationFrame(create_pipe);
